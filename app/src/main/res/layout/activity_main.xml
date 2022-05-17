@@ -223,7 +223,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rhombusleft"
                 android:contentDescription="@string/empty"
-                android:text="@string/empty"
+                android:text="@string/parentheses"
                 android:textColor="@color/white"
                 tools:ignore="SpeakableTextPresentCheck" />
 
