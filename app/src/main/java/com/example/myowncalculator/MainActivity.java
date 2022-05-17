@@ -114,12 +114,10 @@ public class MainActivity extends AppCompatActivity {
         updateText(".");
     }
     public void equalBtn(View view) {
-        //this is only test
+
     }
-    //ToDo: finish the logic and code for:
-    //1. BackSpace
-    //2. Introduce Parentheses
-    //3. Equals
-    //4. Create a background in drawable.
+    public void parenthesesBtn(View view){
+
+    }
 
 }
