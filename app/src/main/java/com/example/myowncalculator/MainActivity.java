@@ -104,19 +104,45 @@ public class MainActivity extends AppCompatActivity {
     public void backspaceBtn(View view) {
 
     }
+
     public void percentBtn(View view) {
         updateText("%");
     }
+
     public void clearBtn(View view) {
         display.setText("");
     }
+
     public void pointBtn(View view) {
         updateText(".");
     }
+
     public void equalBtn(View view) {
 
     }
-    public void parenthesesBtn(View view){
+
+    public void parenthesesBtn(View view) {
+        int cursorPos = display.getSelectionStart();
+        int openParenthesesCount = 0;
+        int closedParenthesesCount = 0;
+        int textLength = display.getText().length();
+
+        for (int i = 0; i < cursorPos; i++) {
+            if (display.getText().toString().substring(i, i + 1).equals("(")) {
+                openParenthesesCount += 1;
+            }
+            if (display.getText().toString().substring(i, i + 1).equals(")")) {
+                closedParenthesesCount += 1;
+            }
+        }
+
+        if (openParenthesesCount == closedParenthesesCount || display.getText().toString().substring(textLength - 1, textLength).equals("(")) {
+            updateText("(");
+        }
+        if (closedParenthesesCount < openParenthesesCount && !display.getText().toString().substring(textLength - 1, textLength).equals("(")) {
+            updateText(")");
+        }
+        display.setSelection(cursorPos + 1);
 
     }
 
